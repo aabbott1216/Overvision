@@ -12,16 +12,17 @@ class Vision:
 
     # constructor
     def __init__(self, needle_img_path, method=cv.TM_CCOEFF_NORMED):
-        # load the image we're trying to match
-        # https://docs.opencv.org/4.2.0/d4/da8/group__imgcodecs.html
-        self.needle_img = cv.imread(needle_img_path, cv.IMREAD_UNCHANGED)
+        if needle_img_path:
+            # load the image we're trying to match
+            # https://docs.opencv.org/4.2.0/d4/da8/group__imgcodecs.html
+            self.needle_img = cv.imread(needle_img_path, cv.IMREAD_UNCHANGED)
 
-        # Save the dimensions of the needle image
-        self.needle_w = self.needle_img.shape[1]
-        self.needle_h = self.needle_img.shape[0]
+            # Save the dimensions of the needle image
+            self.needle_w = self.needle_img.shape[1]
+            self.needle_h = self.needle_img.shape[0]
 
-        # There are 6 methods to choose from:
-        # TM_CCOEFF, TM_CCOEFF_NORMED, TM_CCORR, TM_CCORR_NORMED, TM_SQDIFF, TM_SQDIFF_NORMED
+            # There are 6 methods to choose from:
+            # TM_CCOEFF, TM_CCOEFF_NORMED, TM_CCORR, TM_CCORR_NORMED, TM_SQDIFF, TM_SQDIFF_NORMED
         self.method = method
 
     def find(self, haystack_img, threshold=0.5, debug_mode=None):
@@ -88,3 +89,20 @@ class Vision:
             #cv.imwrite('result_click_point.jpg', haystack_img)
 
         return points
+    # given a list of [x, y, w, h] rectangles and a canvas image to draw on, return an image with
+    # all of those rectangles drawn
+
+    def draw_rectangles(self, haystack_img, rectangles):
+        # these colors are actually BGR
+        line_color = (0, 255, 0)
+        line_type = cv.LINE_4
+
+        for (x, y, w, h) in rectangles:
+            # determine the box positions
+            top_left = (x, y)
+            bottom_right = (x + w, y + h)
+            # draw the box
+            cv.rectangle(haystack_img, top_left, bottom_right,
+                         line_color, lineType=line_type)
+
+        return haystack_img

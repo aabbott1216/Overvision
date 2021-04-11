@@ -17,7 +17,6 @@ while(True):
 
     # get an updated image of the game
     screenshot = wincap.get_screenshot()
-
     cv.imshow('Computer Vision', screenshot)
 
     # debug the loop rate

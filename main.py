@@ -12,8 +12,13 @@ os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
 # initialize the WindowCapture class
 wincap = WindowCapture('Overwatch')
+
+# load the trained model
+cascade_limestone = cv.CascadeClassifier('cascade/cascade.xml')
+# load an empty vision class
+vision_limestone = Vision(None)
 # initialize the Vision class
-vision_limestone = Vision('Capture.jpg')
+# vision_limestone = Vision('Capture.jpg')
 
 '''
 # https://www.crazygames.com/game/guns-and-bottle
@@ -27,8 +32,15 @@ while(True):
     # get an updated image of the game
     screenshot = wincap.get_screenshot()
 
+    # do object detection
+    rectangles = cascade_limestone.detectMultiScale(screenshot)
+
+    # draw the detection results onto the original image
+    detection_image = vision_limestone.draw_rectangles(screenshot, rectangles)
+
     # display the processed image
-    points = vision_limestone.find(screenshot, 0.5, 'rectangles')
+    cv.imshow('Unprocessed', screenshot)
+    # points = vision_limestone.find(screenshot, 0.5, 'rectangles')
     #points = vision_gunsnbottle.find(screenshot, 0.7, 'points')
 
     # debug the loop rate
