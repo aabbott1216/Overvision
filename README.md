@@ -20,3 +20,6 @@ But some not so much
 ![image](https://user-images.githubusercontent.com/77586827/114314010-f89a5c80-9ac6-11eb-92b6-2fb0c33a01d9.png)
 
 I found that the classifier works well with heroes of similar size to soldier
+
+I found this tutorial series to be immensely helpful in the progress so far: https://www.youtube.com/watch?v=XrCAvs9AePM&list=PL1m2M8LQlzfKtkKq2lK5xko4X-8EZzFPI&index=8
+I was inspired by this Thesis: https://bit.ly/30EXmn9
