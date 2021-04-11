@@ -13,8 +13,6 @@ The classifier is doing fairly well now. Next steps may be to add a mask to only
 ![image](https://user-images.githubusercontent.com/77586827/114313951-afe2a380-9ac6-11eb-90fb-c119f2d3c8d9.png)
 
 An outline of Soldier can clearly be seen however the treees in the background also have red pixels along with other items. Tighter pixel values may need to be done.
-![image](https://user-images.githubusercontent.com/77586827/114313976-c983eb00-9ac6-11eb-8c18-e2b2d1e854f5.png)
-
 The classifier works well for other heroes as well
 ![image](https://user-images.githubusercontent.com/77586827/114314005-e9b3aa00-9ac6-11eb-8891-aad994ef9e52.png)
 
