@@ -1,7 +1,6 @@
 # Overvision
 This project uses computer vision and deep learning to draw bounding boxes around Overwatch heroes. The goal of this project is to accurately draw bounding boxes around Soldier 76 
-and be able to train a reinforcement learning agent to track and follow soldier 76. So far Computer vision has been used to draw boounding boxes around many overwatch heroes. See the
-uploaded images to see the bounding box progress.
+and be able to train a reinforcement learning agent to track and follow soldier 76. So far Computer vision has been used to draw bounding boxes around many overwatch heroes. See the uploaded images to see the bounding box progress.
 
 This is the first iteration of bounding box training. It is severely underfit:
 ![image](https://user-images.githubusercontent.com/77586827/114313890-6e51f880-9ac6-11eb-8582-75f6cffab27d.png)
