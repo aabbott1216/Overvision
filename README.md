@@ -24,4 +24,4 @@ I found this tutorial series to be immensely helpful in the progress so far: htt
 
 I was inspired by this Thesis: https://bit.ly/30EXmn9
 
-Next steps include extracting health, ammo count, and mapping features to a gamepad for a RL agent to utilize.
+Next steps include extracting health, ammo count, and mapping features to a gamepad for a RL agent to utilize. I plan to use tensorflow for the agent. 
